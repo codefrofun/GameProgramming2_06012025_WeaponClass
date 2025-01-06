@@ -35,7 +35,7 @@ namespace GameProgramming2_06012025_WeaponClass
 
             enemyHealthUpdate();
 
-            Console.WriteLine($"Damage is" + damageSword, "enemy health is now" + enemyHealthUpdate);
+            Console.WriteLine($"Damage is {damageSword} enemy health is now {enemyHealthUpdate}");
 
             Console.WriteLine("Weapon durablility is now 40");
 
