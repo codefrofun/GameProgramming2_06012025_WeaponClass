@@ -20,34 +20,34 @@ namespace GameProgramming2_06012025_WeaponClass
 
         public int Durability()
         {
-
+            get { return durability; }
+            set { durability = 50; }
         }
 
         public int DamageSword()
         {
-
+            get { return damageSword; }
+            set { damageSword = 15; }
         }
 
         public int EnemyHealth()
         {
-
+            get { return enemyHealth; }
+            set { enemyHealth = 50; }
         }
-
-        public void enemyHealthUpdate()
-        {
-            enemyHealth -= damageSword;
-            return;
-        }
-
 
         public void WeaponAttack(string Dragon)
         {
 
-            Console.WriteLine("Weapon durablility is 50. \n Enemy health is 50.");
+            Console.WriteLine("Weapon durability is {Durability}. Enemy health is {EnemyHealth}.");
 
             Console.WriteLine("Attacking enemy...");
 
-            enemyHealthUpdate();
+            EnemyHealthUpdate();
+
+            Random rand = new Random();
+            int durabilityLoss = rand.Next(5, 11);
+            Durability -= durabilityLoss;
 
             Console.WriteLine($"Damage is {damageSword} enemy health is now {enemyHealthUpdate}");
 
@@ -55,6 +55,11 @@ namespace GameProgramming2_06012025_WeaponClass
 
             // attack enemy with damage
             // on screen, display enemies health minus the damage it has taken
+        }
+
+        private void EnemyHealthUpdate()
+        {
+            EnemyHealth -= DamageSword;
         }
     }
 }
