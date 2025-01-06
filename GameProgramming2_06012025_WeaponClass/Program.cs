@@ -7,7 +7,10 @@ namespace GameProgramming2_06012025_WeaponClass
         public static void Main(string[] args)
         {
             Weapon myWeapon = new Weapon();
+            //creating instance
             myWeapon.WeaponAttack("Dragon");
+            //calling my class
+            Console.ReadLine();
         }
     }
 
@@ -15,25 +18,26 @@ namespace GameProgramming2_06012025_WeaponClass
     public class Weapon
     {
         private int durability = 50;
-        private int damageSword = 15;//change numbers after testing
+        private int damageSword = 15;
         private int enemyHealth = 50;
+        //setting private variables
 
-        public int Durability()
+        public int Durability
         {
             get { return durability; }
-            set { durability = 50; }
+            set { durability = value; }
         }
 
-        public int DamageSword()
+        public int DamageSword
         {
             get { return damageSword; }
-            set { damageSword = 15; }
+            set { damageSword = value; }
         }
 
-        public int EnemyHealth()
+        public int EnemyHealth
         {
             get { return enemyHealth; }
-            set { enemyHealth = 50; }
+            set { enemyHealth = value; }
         }
 
         public void WeaponAttack(string Dragon)
@@ -49,12 +53,12 @@ namespace GameProgramming2_06012025_WeaponClass
             int durabilityLoss = rand.Next(5, 11);
             Durability -= durabilityLoss;
 
-            Console.WriteLine($"Damage is {damageSword} enemy health is now {enemyHealthUpdate}");
+            Console.WriteLine($"Damage {DamageSword} applied to enemy {Dragon}. Enemy health is now {EnemyHealth}.");
 
-            Console.WriteLine("Weapon durability is now 40");
+            Console.WriteLine($"Weapon durability is now {Durability}.");
 
             // attack enemy with damage
-            // on screen, display enemies health minus the damage it has taken
+            // on screen, display enemies health after taking damage
         }
 
         private void EnemyHealthUpdate()
